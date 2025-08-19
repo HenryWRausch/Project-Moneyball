@@ -1,0 +1,58 @@
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dylib
+*.dll
+
+# ---------------------------
+# Environment files
+# ---------------------------
+.env
+.venv/
+venv/
+env/
+
+# ---------------------------
+# Build / Distribution
+# ---------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---------------------------
+# Testing / Coverage
+# ---------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------------------------
+# SQLite Databases
+# ---------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# ---------------------------
+# OS-specific files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+
+# ---------------------------
+# Drivers
+# ---------------------------
+chromedriver*
+geckodriver*
+msedgedriver*
