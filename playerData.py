@@ -231,7 +231,7 @@ class PlayerData:
     advanced_pitching: AdvancedPitching = field(default_factory=AdvancedPitching)
     value_pitching: ValuePitching = field(default_factory=ValuePitching)
     standard_fielding: StandardFielding = field(default_factory=StandardFielding)
-    salary_history: List[SalaryEntry] = field(default_factory=list)
+    salary_history: SalaryEntry = field(default_factory=SalaryEntry)
 
     # --- convenience helpers -------------------------------------------------
     def to_dict(self) -> Dict[str, Any]:
@@ -248,7 +248,7 @@ class PlayerData:
             "advanced_pitching": asdict(self.advanced_pitching),
             "value_pitching": asdict(self.value_pitching),
             "standard_fielding": asdict(self.standard_fielding),
-            "salary_history": [asdict(s) for s in self.salary_history],
+            "salary_history": asdict(self.salary_history),
         }
         return out
 
@@ -266,5 +266,5 @@ class PlayerData:
             advanced_pitching=AdvancedPitching(**(data.get("advanced_pitching") or {})),
             value_pitching=ValuePitching(**(data.get("value_pitching") or {})),
             standard_fielding=StandardFielding(**(data.get("standard_fielding") or {})),
-            salary_history=[SalaryEntry(**s) for s in (data.get("salary_history") or [])],
+            salary_history=SalaryEntry(**(data.get("salary_entry") or {})),
         )
